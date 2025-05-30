@@ -64,7 +64,7 @@ The application will start on http://localhost:8080.
   "location": "Downtown",
   "capacity": 50
 }
-
+```
 ### Register Parking Lot
 
 ```json
