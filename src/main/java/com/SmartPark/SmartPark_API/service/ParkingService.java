@@ -27,8 +27,11 @@ public class ParkingService {
         return parkingLotRepository.save(lot);
     }
 
-    // Register a vehicle
+    // Register a vehicle with validation for duplicate license plate
     public Vehicle registerVehicle(Vehicle vehicle) {
+        if (vehicleRepository.existsById(vehicle.getLicensePlate())) {
+            throw new IllegalArgumentException("Vehicle with license plate " + vehicle.getLicensePlate() + " already exists.");
+        }
         return vehicleRepository.save(vehicle);
     }
 

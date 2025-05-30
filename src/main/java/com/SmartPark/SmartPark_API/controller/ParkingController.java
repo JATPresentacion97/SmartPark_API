@@ -29,14 +29,20 @@ public class ParkingController {
     }
 
     @PostMapping("/vehicles")
-    public ResponseEntity<Vehicle> registerVehicle(@Valid @RequestBody Vehicle vehicle) {
-        return new ResponseEntity<>(parkingService.registerVehicle(vehicle), HttpStatus.CREATED);
+    public ResponseEntity<?> registerVehicle(@Valid @RequestBody Vehicle vehicle) {
+        try {
+            Vehicle savedVehicle = parkingService.registerVehicle(vehicle);
+            return new ResponseEntity<>(savedVehicle, HttpStatus.CREATED);
+        } catch (IllegalArgumentException e) {
+            // Vehicle already exists, respond with 409 Conflict and message
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        }
     }
 
     @PostMapping("/parkinglots/{lotId}/checkin/{licensePlate}")
     public ResponseEntity<String> checkInVehicle(@PathVariable String lotId, @PathVariable String licensePlate) {
         String result = parkingService.checkInVehicle(lotId, licensePlate);
-        if (result.equals("Vehicle checked in successfully")) {
+        if ("Vehicle checked in successfully".equals(result)) {
             return ResponseEntity.ok(result);
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
@@ -45,7 +51,7 @@ public class ParkingController {
     @PostMapping("/vehicles/{licensePlate}/checkout")
     public ResponseEntity<String> checkOutVehicle(@PathVariable String licensePlate) {
         String result = parkingService.checkOutVehicle(licensePlate);
-        if (result.equals("Vehicle checked out successfully")) {
+        if ("Vehicle checked out successfully".equals(result)) {
             return ResponseEntity.ok(result);
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
