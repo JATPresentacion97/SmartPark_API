@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "SmartPark API",
+    "_postman_id": "b3f7498f-1234-4a8f-9e21-abcdef123456",
+    "description": "Postman collection for SmartPark REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Parking Lot",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"lotId\": \"LOT1\",\n  \"location\": \"Downtown\",\n  \"capacity\": 50\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/parking-lots",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "parking-lots"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Vehicle",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"licensePlate\": \"ABC-123\",\n  \"type\": \"CAR\",\n  \"ownerName\": \"John Doe\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vehicles",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "vehicles"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check In Vehicle",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/parking-lots/LOT1/checkin?licensePlate=ABC-123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "parking-lots", "LOT1", "checkin"],
+          "query": [
+            { "key": "licensePlate", "value": "ABC-123" }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check Out Vehicle",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/vehicles/ABC-123/checkout",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "vehicles", "ABC-123", "checkout"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Parking Lot Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/parking-lots/LOT1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "parking-lots", "LOT1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Vehicles in Parking Lot",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/parking-lots/LOT1/vehicles",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "parking-lots", "LOT1", "vehicles"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
