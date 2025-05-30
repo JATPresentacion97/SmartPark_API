@@ -93,5 +93,3 @@ Tests include unit tests for service layer and controller tests using MockMvc.
 - No authentication required
 - Ensure vehicles cannot be parked in multiple lots simultaneously
 - Prevent parking in full lots
-
-Feel free to contribute or raise issues!
