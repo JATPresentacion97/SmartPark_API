@@ -73,13 +73,13 @@ The application will start on http://localhost:8080.
   "type": "CAR",
   "ownerName": "John Doe"
 }
-
+```
 ### Testing
 Run tests using:
 
 ```bash
 ./gradlew test
-
+```
 Tests include unit tests for service layer and controller tests using MockMvc.
 
 ## Database
