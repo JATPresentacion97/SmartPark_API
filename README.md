@@ -89,6 +89,7 @@ Tests include unit tests for service layer and controller tests using MockMvc.
 
 ## Notes
 
+- Postman Collection is already in REPO you can clone it directly in your postman
 - API uses JSON for all input and output
 - No authentication required
 - Ensure vehicles cannot be parked in multiple lots simultaneously
