@@ -26,7 +26,7 @@ SmartPark is an intelligent parking management system designed to optimize urban
 ### Prerequisites
 
 - Java 11 or higher installed
-- Gradle installed (optional, project contains wrapper)
+- Gradle installed 
 
 ### Build and Run
 
@@ -47,12 +47,12 @@ The application will start on http://localhost:8080.
 
 ## API Endpoints
 
-- **POST /parking-lots** — Register a new parking lot  
-- **POST /vehicles** — Register a new vehicle  
-- **POST /parking-lots/{lotId}/checkin?licensePlate={licensePlate}** — Check in a vehicle to a parking lot  
-- **POST /vehicles/{licensePlate}/checkout** — Check out a vehicle from its parking lot  
-- **GET /parking-lots/{lotId}** — Get parking lot status (capacity, occupied spaces)  
-- **GET /parking-lots/{lotId}/vehicles** — List vehicles currently parked in the lot  
+- **POST /api/parkinglots** — Register a new parking lot  
+- **POST /api/vehicles** — Register a new vehicle  
+- **POST /api/parkinglots/{lotId}/checkin?licensePlate={licensePlate}** — Check in a vehicle to a parking lot  
+- **POST /api/vehicles/{licensePlate}/checkout** — Check out a vehicle from its parking lot  
+- **GET  /api/parkinglots/{lotId}** — Get parking lot status (capacity, occupied spaces)  
+- **GET  /api/parkinglots/{lotId}/vehicles** — List vehicles currently parked in the lot  
 
 ## Sample JSON for Requests
 
