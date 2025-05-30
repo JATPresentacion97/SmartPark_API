@@ -1,9 +1,10 @@
 {
   "info": {
+    "_postman_id": "874a96fa-9eaa-4775-beb8-26a966e7e7a1",
     "name": "SmartPark API",
-    "_postman_id": "b3f7498f-1234-4a8f-9e21-abcdef123456",
     "description": "Postman collection for SmartPark REST API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7833545"
   },
   "item": [
     {
@@ -11,7 +12,10 @@
       "request": {
         "method": "POST",
         "header": [
-          { "key": "Content-Type", "value": "application/json" }
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
         ],
         "body": {
           "mode": "raw",
@@ -20,9 +24,14 @@
         "url": {
           "raw": "http://localhost:8080/api/parking-lots",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8080",
-          "path": ["api", "parking-lots"]
+          "path": [
+            "api",
+            "parking-lots"
+          ]
         }
       },
       "response": []
@@ -32,7 +41,10 @@
       "request": {
         "method": "POST",
         "header": [
-          { "key": "Content-Type", "value": "application/json" }
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
         ],
         "body": {
           "mode": "raw",
@@ -41,9 +53,14 @@
         "url": {
           "raw": "http://localhost:8080/api/vehicles",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8080",
-          "path": ["api", "vehicles"]
+          "path": [
+            "api",
+            "vehicles"
+          ]
         }
       },
       "response": []
@@ -56,11 +73,21 @@
         "url": {
           "raw": "http://localhost:8080/api/parking-lots/LOT1/checkin?licensePlate=ABC-123",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8080",
-          "path": ["api", "parking-lots", "LOT1", "checkin"],
+          "path": [
+            "api",
+            "parking-lots",
+            "LOT1",
+            "checkin"
+          ],
           "query": [
-            { "key": "licensePlate", "value": "ABC-123" }
+            {
+              "key": "licensePlate",
+              "value": "ABC-123"
+            }
           ]
         }
       },
@@ -74,9 +101,16 @@
         "url": {
           "raw": "http://localhost:8080/api/vehicles/ABC-123/checkout",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8080",
-          "path": ["api", "vehicles", "ABC-123", "checkout"]
+          "path": [
+            "api",
+            "vehicles",
+            "ABC-123",
+            "checkout"
+          ]
         }
       },
       "response": []
@@ -89,9 +123,15 @@
         "url": {
           "raw": "http://localhost:8080/api/parking-lots/LOT1",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8080",
-          "path": ["api", "parking-lots", "LOT1"]
+          "path": [
+            "api",
+            "parking-lots",
+            "LOT1"
+          ]
         }
       },
       "response": []
@@ -102,11 +142,18 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/parking-lots/LOT1/vehicles",
+          "raw": "http://localhost:8080/api/parkinglots/LOT1/vehicles",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8080",
-          "path": ["api", "parking-lots", "LOT1", "vehicles"]
+          "path": [
+            "api",
+            "parkinglots",
+            "LOT1",
+            "vehicles"
+          ]
         }
       },
       "response": []
